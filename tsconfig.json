@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "disableSourceOfProjectReferenceRedirect": true
+  },
+  "references": [
+    {
+      "path": "./packages/common"
+    },
+    {
+      "path": "./packages/client"
+    },
+    {
+      "path": "./packages/server"
+    }
+  ]
+}

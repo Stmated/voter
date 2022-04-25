@@ -1,0 +1,14 @@
+{
+  "name": "voter",
+  "workspaces": [
+    "packages/common",
+    "packages/client",
+    "packages/server"
+  ],
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "build": "tsc --build",
+    "watch": "tsc --build --watch",
+    "start": ""
+  }
+}

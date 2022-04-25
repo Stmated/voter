@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.settings.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "lib": [
+      "ESNext"
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../common"
+    }
+  ]
+}
