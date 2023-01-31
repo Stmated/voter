@@ -11,7 +11,12 @@
       "node"
     ],
     "lib": [
-      "ESNext"
+      "ESNext",
+      "DOM"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
     ]
   },
   "include": [

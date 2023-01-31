@@ -1,3 +1,4 @@
+import * as JsonPatch from 'fast-json-patch';
 
 export enum GuessType {
   /**
@@ -11,21 +12,37 @@ export enum GuessType {
   EXPECTED
 }
 
-export interface ItemOptions {
+export interface ItemOption {
+  id: string;
   label: string;
-  image: string;
-  result: string;
+  image?: string;
+  result?: string;
+}
+
+export interface State {
+  items: ItemOption[];
 }
 
 export interface ServerToClientEvents {
+
+  state_changed: (operations: JsonPatch.Operation[], by: string) => void;
+
+  /*
   moved_starting_order: (id: string, order: number, by: string) => void;
   item_changed: (id: string, options: ItemOptions, by: string) => void;
   item_deleted: (id: string, by: string) => void;
   guessed: (id: string, type: GuessType, order: number, by: string) => void;
   moved_result_order: (id: string, order: number, by: string) => void;
+  */
+}
+
+export interface SocketData {
+  name: string;
+  room: string;
 }
 
 export interface ClientToServerEvents {
+  join: (data: SocketData, callback: {(state: State): void}) => void;
   move_starting_order: (id: string, order: number) => void;
   set_label: (id: string, label: string) => void;
   set_result: (id: string, result: string) => void;
@@ -37,8 +54,4 @@ export interface ClientToServerEvents {
 
 export interface InterServerEvents {
   ping: () => void;
-}
-
-export interface SocketData {
-  name: string;
 }

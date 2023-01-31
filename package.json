@@ -10,5 +10,8 @@
     "build": "tsc --build",
     "watch": "tsc --build --watch",
     "start": ""
+  },
+  "dependencies": {
+    "fast-json-patch": "^3.1.1"
   }
 }
